@@ -28,26 +28,35 @@ Print $10$ lines of output; each line $i$ (where $1 \le i \le 10$) contains the 
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-11-02T13:40:08.352Z  
+**Submitted:** 2026-11-03T16:24:00.579Z  
 
 ```java
-/*import java.io.*;
+import java.io.*;
 import java.math.*;
 import java.security.*;
 import java.text.*;
 import java.util.*;
 import java.util.concurrent.*;
-import java.util.regex.*;*/
+import java.util.Scanner;
 
 
 
 public class Solution {
     public static void main(String[] args) {
-        int N=2;
+        Scanner sc = new Scanner(System.in);
+        
+        int N = sc.nextInt(); 
+        //int N=2;
+        //int N=0;
+     /*for (int j=2;j<=20;j++){
+         N=j;
+        break;}*/
+    if(N>=2 && N<=20){
      for(int i=1;i<=10;i++){
         int result = N*i;
         System.out.println(N+" "+"x"+" "+i+" "+"="+" "+result);
      }
+    }
 
     
 
