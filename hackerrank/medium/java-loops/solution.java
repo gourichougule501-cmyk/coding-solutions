@@ -1,32 +1,23 @@
-import java.io.*;
-import java.math.*;
-import java.security.*;
-import java.text.*;
 import java.util.*;
-import java.util.concurrent.*;
-import java.util.Scanner;
+import java.io.*;
 
-
-
-public class Solution {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        
-        int N = sc.nextInt(); 
-        //int N=2;
-        //int N=0;
-     /*for (int j=2;j<=20;j++){
-         N=j;
-        break;}*/
-    if(N>=2 && N<=20){
-     for(int i=1;i<=10;i++){
-        int result = N*i;
-        System.out.println(N+" "+"x"+" "+i+" "+"="+" "+result);
-     }
-    }
-
-    
-
-        
+class Solution{
+    public static void main(String []argh){
+        Scanner in = new Scanner(System.in);
+        int q=in.nextInt();
+        //double result=;
+        for(int i=0;i<q;i++){
+            int a = in.nextInt();
+            int b = in.nextInt();
+            int n = in.nextInt();
+         int result=a;   
+        for(int j=0;j<n;j++){
+            result = result + (int) Math.pow(2,j)*b;
+            System.out.print( result + " ");
+        }
+        System.out.println();
+        }
+        //System.out.println("the series is:" + result);
+        in.close();
     }
 }
