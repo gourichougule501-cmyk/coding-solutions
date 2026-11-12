@@ -1,23 +1,24 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
 
-import java.time.*;
+public class Solution {
+    
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        double payment = scanner.nextDouble();
+        scanner.close();
 
-class Result {
-
-    /*
-     * Complete the 'findDay' function below.
-     *
-     * The function is expected to return a STRING.
-     * The function accepts following parameters:
-     *  1. INTEGER month
-     *  2. INTEGER day
-     *  3. INTEGER year
-     */
-
-    public static String findDay(int month, int day, int year) {
-        LocalDate d = LocalDate.of(year, month, day);
-        return d.getDayOfWeek().toString();
-
+        NumberFormat us = NumberFormat.getCurrencyInstance(Locale.US);
+        Locale indiaLocale = new Locale("en","in");
+        NumberFormat india = NumberFormat.getCurrencyInstance(indiaLocale);
+        NumberFormat china = NumberFormat.getCurrencyInstance(Locale.CHINA);
+        NumberFormat france = NumberFormat.getCurrencyInstance(Locale.FRANCE);
+        System.out.println("US: " + us.format(payment));
+        System.out.println("India: " + india.format(payment));
+        System.out.println("China: " + china.format(payment));
+        System.out.println("France: " + france.format(payment));
     }
-
 }
-
