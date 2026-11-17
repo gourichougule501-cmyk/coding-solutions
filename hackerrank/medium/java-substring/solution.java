@@ -1,27 +1,21 @@
 import java.io.*;
 import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
 
 public class Solution {
 
     public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        String S = in.next();
+        int start = in.nextInt();
+        int end = in.nextInt();
+        System.out.println(S.substring(start,end));
         
-        Scanner sc = new Scanner(System.in);
-        String A = sc.next();
-        String B = sc.next();
-        /* Enter your code here. Print output to STDOUT. */
-        System.out.println(A.length() +B.length());
-        if(A.compareTo(B) > 0){
-            System.out.println("Yes");
-        }
-        else {
-            System.out.println("No");
-        }
-        System.out.print(A.substring(0,1).toUpperCase()+A.substring(1)+" ");
-        System.out.print(B.substring(0,1).toUpperCase()+B.substring(1));
+        
+        
         
         
     }
 }
-
-
-
