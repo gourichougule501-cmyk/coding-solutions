@@ -1,4 +1,4 @@
-# Java String Reverse
+# Java Substring Comparisons
 
 ![Difficulty](https://img.shields.io/badge/Difficulty-Medium-yellow)
 
@@ -37,28 +37,29 @@ The second line contains a string $b$.
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-11-18T01:08:24.513Z  
+**Submitted:** 2026-11-20T17:52:42.255Z  
 
 ```java
-import java.io.*;
-import java.util.*;
 
-public class Solution {
 
-    public static void main(String[] args) {
+    public static String getSmallestAndLargest(String s, int k) {
+        String smallest = s.substring(0,k);
+        String largest = s.substring(0,k);
         
-        Scanner sc =new Scanner(System.in);
-        String A=sc.next();
-        StringBuilder r =new StringBuilder(A);
-        r.reverse();
-         if(A.equals(r.toString())){System.out.println("Yes");}
-         else{System.out.println("No");}
-        /* Enter your code here. Print output to STDOUT. */
-        
+        // Complete the function
+        // 'smallest' must be the lexicographically smallest substring of length 'k'
+        // 'largest' must be the lexicographically largest substring of length 'k'
+        for(int i=0;i<=s.length()-k;i++){
+            String subs = s.substring(i,i+k);
+            if(subs.compareTo(smallest)<0){
+                smallest = subs;}
+            if(subs.compareTo(largest)>0){
+                largest = subs;
+            }
+            
+        }
+        return smallest + "\n" + largest;
     }
-}
-
-
 
 
 ```
