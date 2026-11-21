@@ -25,7 +25,7 @@ Given a string $A$, print ``Yes`` if it is a palindrome, print ``No`` otherwise.
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-11-18T01:07:39.683Z  
+**Submitted:** 2026-11-21T16:08:35.770Z  
 
 ```java
 import java.io.*;
@@ -35,12 +35,16 @@ public class Solution {
 
     public static void main(String[] args) {
         
-        Scanner sc =new Scanner(System.in);
+        Scanner sc=new Scanner(System.in);
         String A=sc.next();
-        StringBuilder r =new StringBuilder(A);
-        r.reverse();
-         if(A.equals(r.toString())){System.out.println("Yes");}
-         else{System.out.println("No");}
+        StringBuffer sb = new StringBuffer(A);
+        String s = sb.reverse().toString();
+        if(A.equals(s)){
+            System.out.println("Yes");
+        }
+        else{
+            System.out.println("No");
+        }
         /* Enter your code here. Print output to STDOUT. */
         
     }
