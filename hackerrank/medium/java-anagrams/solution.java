@@ -1,21 +1,29 @@
 
 
-    public static String getSmallestAndLargest(String s, int k) {
-        String smallest = s.substring(0,k);
-        String largest = s.substring(0,k);
-        
+    static boolean isAnagram(String a, String b) {
         // Complete the function
-        // 'smallest' must be the lexicographically smallest substring of length 'k'
-        // 'largest' must be the lexicographically largest substring of length 'k'
-        for(int i=0;i<=s.length()-k;i++){
-            String subs = s.substring(i,i+k);
-            if(subs.compareTo(smallest)<0){
-                smallest = subs;}
-            if(subs.compareTo(largest)>0){
-                largest = subs;
+        a= a.toLowerCase();     //overwrite
+         b = b.toLowerCase();       //overwrite
+            //return s.equals(p);
+            if(a.length() != b.length()){
+                return false;
             }
+    
             
-        }
-        return smallest + "\n" + largest;
+    int[] freq = new int[26];
+    
+    for(int i=0;i<a.length();i++){
+        freq[a.charAt(i)-'a']++;
+        freq[b.charAt(i)-'a']--;
     }
+    for(int i=0;i<26;i++){
+        if(freq[i] != 0){
+            return false;
+        }
+    }
+    return true;
+    
+    }
+    
+    
 
