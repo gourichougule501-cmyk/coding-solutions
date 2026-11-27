@@ -1,4 +1,4 @@
-# Java Anagrams
+# Java String Tokens
 
 ![Difficulty](https://img.shields.io/badge/Difficulty-Medium-yellow)
 
@@ -26,37 +26,43 @@ On the first line, print an integer, $n$, denoting the number of tokens in strin
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-11-24T02:46:39.213Z  
+**Submitted:** 2026-11-27T07:32:36.240Z  
 
 ```java
+import java.io.*;
+import java.util.*;
 
+public class Solution {
 
-    static boolean isAnagram(String a, String b) {
-        // Complete the function
-        a= a.toLowerCase();     //overwrite
-         b = b.toLowerCase();       //overwrite
-            //return s.equals(p);
-            if(a.length() != b.length()){
-                return false;
-            }
-    
-            
-    int[] freq = new int[26];
-    
-    for(int i=0;i<a.length();i++){
-        freq[a.charAt(i)-'a']++;
-        freq[b.charAt(i)-'a']--;
-    }
-    for(int i=0;i<26;i++){
-        if(freq[i] != 0){
-            return false;
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        String s = scan.nextLine();
+        if (s.length() == 0){
+            System.out.print(0);
+            //return;
         }
+        if(s.trim().isEmpty()){
+            System.out.print(0);
+            //return;
+        }
+        else{
+            String p = s.replaceAll("[^\\p{Alpha}]+"," ").trim();
+            if(p.isEmpty()){
+                System.out.print(0);
+            }
+            else{
+                String[] strings = p.split("\\p{Space}+");
+                System.out.println(strings.length);
+        
+                for(String i : strings){
+                    System.out.println(i);
+                }
+            }
+        
+        }
+        scan.close();
     }
-    return true;
-    
-    }
-    
-    
+}
 
 
 ```
